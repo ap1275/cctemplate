@@ -20,4 +20,5 @@ endif(CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 project(libra)
 
+add_subdirectory(src)
 add_subdirectory(test)
