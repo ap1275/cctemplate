@@ -4,6 +4,6 @@ import os
 import subprocess
 
 if os.name == 'nt':
-    subprocess.check_call(['python','tools/test_once_after_build.py'])
+    subprocess.check_call(['python','tools/fresh_build.py'])
 if os.name == 'posix':
-    subprocess.check_call(['python3','tools/test_once_after_build.py'])
+    subprocess.check_call(['python3','tools/fresh_build.py'])
