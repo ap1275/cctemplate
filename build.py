@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+import os
 import subprocess
 
-subprocess.check_call(['python3','tools/test_once_after_build.py'])
+if os.name == 'nt':
+    subprocess.check_call(['python','tools/test_once_after_build.py'])
+if os.name == 'posix':
+    subprocess.check_call(['python3','tools/test_once_after_build.py'])
