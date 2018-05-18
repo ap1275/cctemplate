@@ -15,4 +15,5 @@ if os.name == 'nt':
     os.system('cmake .. -G "Visual Studio 15 Win64')
     os.system('msbuild libra.sln')
     shutil.copy('src/Debug/libra.dll', 'test/Debug/libra.dll')
-    os.system('test/Debug/main_test.exe')
+    os.chdir('test/Debug')
+    os.system('main_test.exe')
