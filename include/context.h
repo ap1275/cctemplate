@@ -6,7 +6,7 @@ namespace g {
 
   struct context;
 
-  API_DEF context * create_context();
-  API_DEF void destroy_context(context *);
+  API_DEF context * create_context() noexcept;
+  API_DEF void destroy_context(context **) noexcept;
 
 }

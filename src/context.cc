@@ -1,11 +1,21 @@
 #include<internal_context.h>
 #include<iostream>
 
-g::context * g::create_context() {
-  std::cout << "create context" << std::endl;
-  return new g::context;
+g::context * g::create_context() noexcept {
+	g::context * p = nullptr;
+  try {
+		p = new g::context;
+	}
+	catch(...) {
+		return nullptr;
+	}
+	return p;
 }
 
-void g::destroy_context(g::context * c) {
-  delete c;
+void g::destroy_context(g::context ** c) noexcept {
+	if(!c) {
+		return;
+	}
+  delete (*c);
+	(*c) = nullptr;
 }
