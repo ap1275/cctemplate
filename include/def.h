@@ -39,4 +39,4 @@
 
 #define DECL_STRICT(x) \
   DECL_COPY_MOVE(x, delete); \
-  DECL_DEFAULT(x);
+  DECL_DEFAULT(x)
