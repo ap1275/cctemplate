@@ -4,7 +4,7 @@ import os
 import shutil
 
 if os.path.exists("build"):
-  shutil.rmtree("build")
+    shutil.rmtree("build")
 os.mkdir('build')
 os.chdir('build')
 if os.name == 'posix':
