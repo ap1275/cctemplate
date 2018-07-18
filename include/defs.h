@@ -1,7 +1,11 @@
 #pragma once
 
 #if defined(_MSC_VER)
-  #define API_DEF __declspec(dllexport)
+  #if defined(_WINDLL)
+    #define API_DEF __declspec(dllexport)
+  #else
+    #define API_DEF __declspec(dllimport)
+  #endif
 #else
   #define API_DEF
 #endif
@@ -38,3 +42,4 @@
   DECL_DEFAULT(x);
 
 #define PUBLIC_NAMESPACE g::pub
+
