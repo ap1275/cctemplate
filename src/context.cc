@@ -1,10 +1,10 @@
 #include<internal_context.h>
 #include<iostream>
 
-g::context * g::create_context() noexcept {
-  g::context * p = nullptr;
+PUBLIC_NAMESPACE::context * create_context() noexcept {
+  PUBLIC_NAMESPACE::context * p = nullptr;
   try {
-    p = new g::context;
+    p = new PUBLIC_NAMESPACE::context;
   }
   catch(...) {
     return nullptr;
@@ -12,8 +12,8 @@ g::context * g::create_context() noexcept {
   return p;
 }
 
-void g::destroy_context(g::context ** c) noexcept {
-  if(!c) {
+void destroy_context(PUBLIC_NAMESPACE::context ** c) noexcept {
+  if( ! c) {
     return;
   }
   delete (*c);

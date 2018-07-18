@@ -2,7 +2,7 @@
 
 #include<context.h>
 
-namespace g {
+namespace PUBLIC_NAMESPACE {
 
   struct context {
 

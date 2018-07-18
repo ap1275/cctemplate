@@ -36,3 +36,5 @@
 #define DECL_STRICT(x) \
   DECL_COPY_MOVE(x, delete); \
   DECL_DEFAULT(x);
+
+#define PUBLIC_NAMESPACE g::pub

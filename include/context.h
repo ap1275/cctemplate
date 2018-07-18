@@ -1,12 +1,22 @@
 #pragma once
 
-#include"def.h"
+#include"defs.h"
 
-namespace g {
+namespace PUBLIC_NAMESPACE {
 
-  struct context;
-
-  API_DEF context * create_context() noexcept;
-  API_DEF void destroy_context(context **) noexcept;
+  struct API_DEF context;
 
 }
+
+/* C_API */
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+API_DEF PUBLIC_NAMESPACE::context * create_context() noexcept;
+API_DEF void destroy_context(PUBLIC_NAMESPACE::context **) noexcept;
+
+#ifdef __cplusplus
+}
+#endif

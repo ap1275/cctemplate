@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.7.2)
 
-#set(CMAKE_C_COMPILER "/usr/local/bin/clang" CACHE string "clang compiler" FORCE)
-#set(CMAKE_CXX_COMPILER "/usr/local/bin/clang++" CACHE string "clang++ compiler" FORCE)
-
 set(CMAKE_CXX_FLAGS_DEBUG "" CACHE STRING "" FORCE)
 set(CMAKE_CXX_FLAGS_RELEASE "" CACHE STRING "" FORCE)
 
@@ -11,6 +8,10 @@ if (UNIX)
   add_definitions("-std=c++17")
   add_definitions("-msse4.2")
   add_definitions("-mavx")
+endif()
+
+if (WIN32)
+  add_definitions("/std:c++17")
 endif()
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release")
